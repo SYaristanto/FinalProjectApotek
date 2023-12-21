@@ -18,15 +18,17 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 						<h4 class="page-title">Tambah Stok Obat</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="stok_obat.php">
+								<a href="dashboard.php">
 									<i class="flaticon-home"></i>
 								</a>
 							</li>
 							<li class="separator">
+								<a href="stok_obat.php">
 								<i class="flaticon-right-arrow"></i>
+								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="#">Tambah Stok Obat</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
