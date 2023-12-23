@@ -9,6 +9,7 @@ if($_SESSION['role']!= 'admin'){
 $ds = DIRECTORY_SEPARATOR;
 $base_dir = realpath(dirname(__FILE__) . $ds . '..' . $ds) . $ds;
 require_once("{$base_dir}pages{$ds}core{$ds}header.php");
+require_once("{$base_dir}backend{$ds}tambah_stok_obat.php");
 ?>
 <body>
 <div class="main-panel">
@@ -60,31 +61,61 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 													<th>No</th>
 													<th>ID Obat</th>
 													<th>Nama Obat</th>
+                                                    <th>Jenis</th>
                                                     <th>Stok</th>
-                                                    <th>Obat Masuk</th>
-                                                    <th>Obat Terjual</th>
-													<th style="width: 10%">Action</th>
+                                                    <th>Expired</th>
+													<th>Satuan</th>
+													<th>Harga Satuan</th>
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>1</td>
-													<td>System Architect</td>
-													<td>Edinburgh</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>Edinburgh</td>
-													<td>
-														<div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-																<i class="fa fa-edit"></i>
-															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-																<i class="fa fa-times"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
+													<?php
+													require "../backend/config/db_apotek.php";
+													$daftar_stok_obat = mysqli_query($db_connect, "SELECT * FROM tbl_stok_obat");
+													$no = 1;
+													
+													while ($tbl_stok = mysqli_fetch_array($daftar_stok_obat)){
+													
+													?>
+													<tr>
+														<td>
+															<?php $no++;  ?>
+														</td>
+														<td>
+															<?php echo $tbl_stok ['id_obat']; ?>
+														</td>
+														<td>
+															<?php echo $tbl_stok ['nama']; ?>
+														</td>
+                                                    	<td>
+															<?php echo $tbl_stok ['jenis']; ?>
+														</td>
+                                                    	<td>
+															<?php echo $tbl_stok ['stok']; ?>
+														</td>
+                                                    	<td>
+															<?php echo $tbl_stok ['expired']; ?>
+														</td>
+														<td>
+															<?php echo $tbl_stok ['satuan']; ?>
+														</td>
+														<td>
+															<?php echo $tbl_stok ['harga_satuan']; ?>
+														</td>
+													
+														<td>
+															<div class="card-action d-flex justify-content-between">
+																<a href="edit_stok_obat.php"> 
+																<button type="submit" name="Edit" class="btn btn-info" style="margin-right: 10px;">Edit</button>
+																</a>
+																<button type="submit" name="Hapus" class="btn btn-danger">Hapus</button>
+															</div>
+														</td>
+													</tr>
+												<?php
+												}
+												?>
 											</tbody>
 										</table>
 									</div>
