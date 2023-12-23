@@ -1,28 +1,30 @@
 <?php
 
-require './config/db_apotek.php';
+require 'config/db_apotek.php';
 
-if(isset($_POST['tambah stok obat'])) {
+if(isset($_POST['tambah'])) {
     global $db_connect;
 
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $image = $_FILES['image']['name'];
-    $tempImage = $_FILES['image']['tmp_name'];
+    $nama = mysqli_real_escape_string($db_connect, $_POST['Nama_Obat']);
+    $jenis = mysqli_real_escape_string($db_connect, $_POST['Jenis']);
+    $stok = mysqli_real_escape_string($db_connect, $_POST['Stok']);
+    $expired = mysqli_real_escape_string($db_connect, $_POST['Expired']);
+    $satuan = mysqli_real_escape_string($db_connect, $_POST['Satuan']);
+    $harga_satuan = mysqli_real_escape_string($db_connect, $_POST['Harga_Satuan']);
 
-    $randomFilename = time().'-'.md5(rand()).'-'.$image;
+    // Validasi data (sesuaikan dengan kebutuhan Anda)
 
-    $uploadPath = __DIR__.'/../upload/'.$randomFilename;
+    // Lakukan operasi SQL untuk menambahkan stok obat
+    $query = "INSERT INTO tbl_stok_obat (nama, jenis, stok, expired, satuan, harga_satuan) VALUES ('" . $nama ."', '" . $jenis ."', '" . $stok . "', '" . $expired . "', '" . $satuan ."', '" . $harga_satuan . "')";
+    $result = mysqli_query($db_connect, $query);
 
-    $result = mysqli_query($db_connect, 'SELECT MAX(id) AS max_id FROM products');
-     
-
-    if(move_uploaded_file($tempImage,$uploadPath)) {
-        mysqli_query($db_connect,"INSERT INTO products (name,price,image)
-                    VALUES ('$name','$price','/upload/$randomFilename')");
-        echo "berhasil upload";
+    if($result) {
+        echo "Stok obat berhasil ditambahkan.";
+        header("Location:../pages/stok_obat.php");
+        exit();
     } else {
-        echo "gagal upload";
+        echo "Gagal menambahkan stok obat: " . mysqli_error($db_connect);
+        header("Location:");
+        exit();
     }
-
 }
