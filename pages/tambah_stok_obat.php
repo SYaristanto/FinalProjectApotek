@@ -35,7 +35,8 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 							</li>
 						</ul>
 					</div>
-									<div class="row">
+					<form action="../backend/tambah_stok_obat.php" method="POST">
+					<div class="row">
 										<div class="col-lg-12">
 											<div class="form-row"> 
 											<div class="form-group col-md-6">
@@ -43,24 +44,24 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 												<input type="text" name="Nama_Obat" class="form-control" id="Nama_Obat">
 											</div>
 											<div class="form-group col-md-6">
+												<label for="Jenis">Jenis</label>
+												<input type="text" name="Jenis" class="form-control" id="stok">
+											</div>
+											<div class="form-group col-md-6">
 												<label for="Stok">Stok</label>
-												<input type="text" name="Stok" class="form-control" id="stok">
+												<input type="text" name="Stok" class="form-control" id="email2">
 											</div>
 											<div class="form-group col-md-6">
-												<label for="Obat_In">Obat Masuk</label>
-												<input type="text" name="Obat_In" class="form-control" id="email2">
+												<label for="Expired">Expired</label>
+												<input type="date" name="Expired" class="form-control" id="password">
 											</div>
 											<div class="form-group col-md-6">
-												<label for="Obat_Out">Obat Terjual</label>
-												<input type="text" name="Obat_Out" class="form-control" id="password">
+												<label for="Satuan">Satuan</label>
+												<input type="text" name="Satuan" class="form-control" id="email2">
 											</div>
 											<div class="form-group col-md-6">
-												<label for="Obat_In">Obat Masuk</label>
-												<input type="text" name="Obat_In" class="form-control" id="email2">
-											</div>
-											<div class="form-group col-md-6">
-												<label for="Obat_Out">Obat Terjual</label>
-												<input type="text" name="Obat_Out" class="form-control" id="password">
+												<label for="Harga_Satuan">Harga Satuan</label>
+												<input type="text" name="Harga_Satuan" class="form-control" id="password">
 											</div>
 											</div>
 										</div>
@@ -68,3 +69,5 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 										<div class="card-action">
 										<button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
 									</div>
+					</form>
+									
