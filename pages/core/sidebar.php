@@ -64,18 +64,8 @@
 										</a>
 									</li>
 									<li>
-										<a href="components/buttons.html">
-											<span class="sub-item">Obat Masuk</span>
-										</a>
-									</li>
-									<li>
 										<a href="components/gridsystem.html">
-											<span class="sub-item">Obat Keluar</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/panels.html">
-											<span class="sub-item">Supplier</span>
+											<span class="sub-item">Laporan</span>
 										</a>
 									</li>
 								</ul>
@@ -84,31 +74,31 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
 								<i class="fas fa-file-alt"></i>
-								<p>Laporan</p>
+								<p>Data Penjualan</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="sidebar-style-1.html">
-											<span class="sub-item">Stok Obat</span>
+										<a href="./supplier.php">
+											<span class="sub-item">Supplier</span>
 										</a>
 									</li>
 									<li>
 										<a href="overlay-sidebar.html">
-											<span class="sub-item">Obat Masuk</span>
+											<span class="sub-item">Laporan</span>
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="compact-sidebar.html">
-											<span class="sub-item">Obat Terjual</span>
+											<span class="sub-item">Laporan</span>
 										</a>
-									</li>
-									<li>
+									</li> -->
+									<!-- <li>
 										<a href="static-sidebar.html">
 											<span class="sub-item">Supplier</span>
 										</a>
-                                    </li>
+                                    </li> -->
 								</ul>
 							</div>
 						</li>
