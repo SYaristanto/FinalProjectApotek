@@ -73,12 +73,17 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
-								<i class="fas fa-file-alt"></i>
+								<i class="fas fa-file-invoice-dollar"></i>
 								<p>Data Penjualan</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
+									<li>
+										<a href="./penjualan.php">
+											<span class="sub-item">Penjualan</span>
+										</a>
+									</li>
 									<li>
 										<a href="./supplier.php">
 											<span class="sub-item">Supplier</span>
