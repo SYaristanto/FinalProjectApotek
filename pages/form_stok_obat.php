@@ -62,17 +62,11 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 												<div class="form-group col-md-6">
 													<label for="Harga_Satuan">Harga Satuan</label>
 													<input type="text" name="Harga_Satuan" class="form-control" id="password">
-												</div>
-												<div class="form-group col-md-3">
-													<label for="Gambar">Gambar</label>
-													<input type="file" name="Gambar" class="form-control" id="exampleFormControlFile1">
-												</div>
-											
 											</div>
 										</div>
 									</div>
 										<div class="card-action">
-											<button type="submit" name="tambah" class="btn btn-primary mx-2">Tambah</button>
+											<button type="submit" name="tambah" class="btn btn-warning mx-2">Tambah</button>
 											<a href="stok_obat.php">
 												<button type="submit" name="batal" class="btn btn-danger">Batal</button>
 											</a>
