@@ -1,14 +1,20 @@
 <?php
 
 session_start();
-if($_SESSION['role']!= 'super_admin'){
+if($_SESSION['role'] != 'super_admin'){
 	header('Location:../login.php');
 	exit();
 }
+// session_start();
+// if(!isset($_SESSION['role']) || $_SESSION['role'] != 'super_admin'){
+//     header('Location:../login.php');
+//     exit();
 
+// }	
 $ds = DIRECTORY_SEPARATOR;
 $base_dir = realpath(dirname(__FILE__) . $ds . '..' . $ds) . $ds;
-require_once("{$base_dir}pages{$ds}core{$ds}header.php");
+require_once("{$base_dir}pages{$ds}core{$ds}header_owner.php");
+require_once("{$base_dir}pages{$ds}core{$ds}sidebar_owner.php");
 ?>
 <body>
 <div class="main-panel">
@@ -108,5 +114,5 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 </div>  
 </body>
 
-<!-- <?php require_once("{$base_dir}pages{$ds}core{$ds}footer.php");
+<!-- <?php require_once("{$base_dir}pages{$ds}core{$ds}footer_owner.php");
 ?> -->
