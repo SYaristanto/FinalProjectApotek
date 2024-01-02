@@ -64,7 +64,12 @@
 										</a>
 									</li>
 									<li>
-										<a href="components/gridsystem.html">
+										<a href="./obat_masuk.php">
+											<span class="sub-item">Obat Masuk</span>
+										</a>
+									</li>
+									<li>
+										<a href="./laporan_stok_obat.php">
 											<span class="sub-item">Laporan</span>
 										</a>
 									</li>
@@ -85,11 +90,6 @@
 										</a>
 									</li>
 									<li>
-										<a href="./supplier.php">
-											<span class="sub-item">Supplier</span>
-										</a>
-									</li>
-									<li>
 										<a href="overlay-sidebar.html">
 											<span class="sub-item">Laporan</span>
 										</a>
@@ -104,6 +104,27 @@
 											<span class="sub-item">Supplier</span>
 										</a>
                                     </li> -->
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#forms">
+								<i class="fas fa-dolly"></i>
+								<p>Data Supplier</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="forms">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="./supplier.php">
+											<span class="sub-item">Supplier</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="sub-item">Laporan</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
