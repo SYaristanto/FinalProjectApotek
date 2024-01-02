@@ -36,7 +36,7 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 						</ul>
 					</div>
 					<form action="../backend/edit_stok_obat.php" method="POST">
-					<div class="row">
+						<div class="row">
 										<div class="col-lg-12">
 											<div class="form-row"> 
 											<div class="form-group col-md-6">
@@ -63,9 +63,10 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 												<label for="Harga_Satuan">Harga Satuan</label>
 												<input type="text" name="Harga_Satuan" class="form-control" id="password">
 											</div>
-											</div>
 										</div>
 									</div>
 										<div class="card-action">
-										<button type="submit" name="Simpan" class="btn btn-primary">Simpan</button>
+										<button type="submit" name="simpan" class="btn btn-primary mx-2">Simpan</button>
+										<button type="submit" name="batal" class="btn btn-danger">Batal</button>
 									</div>
+					</form>				
