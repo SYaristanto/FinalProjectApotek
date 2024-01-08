@@ -28,7 +28,7 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#">Ubah Stok Obat</a>
+								<a href="#">Stok Obat</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
