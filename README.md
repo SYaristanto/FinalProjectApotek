@@ -1,6 +1,6 @@
 # Atlantis-Lite
 
-![](http://themekita.com/assets/images/atlantislite.png)
+https://apotekarshakamedika.com/
 
 Free Bootstrap 4 Admin Dashboard
 
