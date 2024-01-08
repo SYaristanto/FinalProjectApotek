@@ -22,7 +22,27 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 						</div>
 					</div>
 				</div>
-                <div class="page-inner mt--5">
+				<?php
+				include '../backend/config/db_apotek.php';
+				
+				// Data Realtime Stok Obat
+      			$dataRealtimeStokObat = mysqli_query($db_connect, "SELECT count(id_obat) AS jmlh_obat FROM tbl_stok_obat");
+      			$viewStokObat = mysqli_fetch_array($dataRealtimeStokObat);
+
+      			// Data Realtime Obat Masuk
+      			$dataRealtimeObatMasuk = mysqli_query($db_connect, "SELECT count(id_obat_masuk) AS jmlh_obat_masuk FROM tbl_obat_masuk");
+      			$viewObatMasuk = mysqli_fetch_array($dataRealtimeObatMasuk);
+
+      			// Data Realtime Penjualan
+      			$dataRealtimePenjualan = mysqli_query($db_connect, "SELECT count(id_penjualan) AS jmlh_penjualan FROM tbl_penjualan");
+      			$viewPenjualan = mysqli_fetch_array($dataRealtimePenjualan);
+
+				// Data Realtime Supplier
+				$dataRealtimeSupplier = mysqli_query($db_connect, "SELECT count(id_supplier) AS jmlh_supplier FROM tbl_supplier");
+				$viewSupplier = mysqli_fetch_array($dataRealtimeSupplier);
+				?>
+                
+				<div class="page-inner mt--5">
                 <div class="row mt--2">
 						<div class="col-sm-6 col-md-3">
 							<div class="card card-stats card-primary card-round">
@@ -36,7 +56,7 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 										<div class="col-7 col-stats">
 											<div class="numbers">
 												<p class="card-category">Stok Obat</p>
-												<h4 class="card-title">1,294</h4>
+												<h4 class="card-title"><?php echo $viewStokObat['jmlh_obat'];?></h4>
 											</div>
 										</div>
 									</div>
@@ -55,7 +75,7 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 										<div class="col-7 col-stats">
 											<div class="numbers">
 												<p class="card-category">Obat Masuk</p>
-												<h4 class="card-title">1303</h4>
+												<h4 class="card-title"><?php echo $viewObatMasuk['jmlh_obat_masuk'];?></h4>
 											</div>
 										</div>
 									</div>
@@ -73,8 +93,8 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 										</div>
 										<div class="col-7 col-stats">
 											<div class="numbers">
-												<p class="card-category">Obat Terjual</p>
-												<h4 class="card-title">$ 1,345</h4>
+												<p class="card-category">Penjualan Obat</p>
+												<h4 class="card-title"><?php echo $viewPenjualan['jmlh_penjualan'];?></h4>
 											</div>
 										</div>
 									</div>
@@ -93,7 +113,7 @@ require_once("{$base_dir}pages{$ds}core{$ds}header.php");
 										<div class="col-7 col-stats">
 											<div class="numbers">
 												<p class="card-category">Supplier</p>
-												<h4 class="card-title">576</h4>
+												<h4 class="card-title"><?php echo $viewSupplier['jmlh_supplier'];?></h4>
                                                 
 											</div>
 										</div>
