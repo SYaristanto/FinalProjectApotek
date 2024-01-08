@@ -42,7 +42,7 @@ require_once("{$base_dir}backend{$ds}tambah_stok_obat.php");
     								<div class="justify-content-start">
 										<a href = "form_stok_obat.php">
 											<button class="btn btn-primary btn-round ml-auto" name="tambah stok obat" data-toggle="modal" data-target="#addRowModal">
-												<i class="fa fa-plus"></i>
+												<i class="fa fa-plus mx-1"></i>
             									Tambah Stok Obat
         									</button>
 										</a>
@@ -100,8 +100,12 @@ require_once("{$base_dir}backend{$ds}tambah_stok_obat.php");
 															<a href="edit_stok_obat.php">
                                                                 <button type="submit" name="Edit" class="btn btn-primary" style="margin-right: 10px;">Edit</button>
                                                             </a>
-															<a href="../backend/hapus_stok_obat.php?id_obat=<?php echo $tbl_stok_obat['id_obat']; ?>">
-															<button type="submit" name="Hapus" class="btn btn-danger">Hapus</button>
+															<!-- <a href="../backend/hapus_stok_obat.php?id_obat=<?php echo $tbl_stok_obat['id_obat']; ?>"> -->
+															<!-- <button type="submit" name="Hapus" class="btn btn-danger">Hapus</button> -->
+															<button 
+																type="button" href="../backend/hapus_stok_obat.php?id_obat=<?php echo $tbl_stok_obat['id_obat']; ?>"
+                                                             	class="btn btn-danger delete">Hapus
+															 </button>
 														</div>
 													</td>
 												</tr>
@@ -118,6 +122,57 @@ require_once("{$base_dir}backend{$ds}tambah_stok_obat.php");
 
 </div>  
 </body>
+<script>
+        const SweetAlert2Demo = function () {
+            const initDemos = function () {
+                $('.delete').click(function (e) {
+                    var url = e.target.getAttribute('href');
+                    swal({
+                        title: 'Yakin ingin menghapus?',
+                        text: "Data tidak bisa kembali jika terhapus!",
+                        type: 'warning',
+                        buttons: {
+                            confirm: {
+                                text: 'Hapus',
+                                className: 'btn btn-success'
+                            },
+                            cancel: {
+                                text: 'Batal',
+                                visible: true,
+                                className: 'btn btn-danger'
+                            }
+                        }
+                    }).then((Delete) => {
+                        if (Delete) {
+                            swal({
+                                title: 'Data Terhapus!',
+                                text: 'Data Stok Obat Terhapus',
+                                type: 'success',
+								buttons: {
+                                    confirm: {
+                                        className: 'btn btn-success'
+                                    }
+                                }
+                            });
+                            setTimeout(function () {
+                                window.location.href = url;
+                            }, 2000);
+                        } else {
+                            swal.close();
+                        }
+                    });
+                });
+            };
+            return {
+                init: function () {
+                    initDemos();
+                },
+            };
+        }();
 
+        jQuery(document).ready(function () {
+            SweetAlert2Demo.init();
+        });
+</script>
 <!-- <?php require_once("{$base_dir}pages{$ds}core{$ds}footer.php");
 ?>  -->
