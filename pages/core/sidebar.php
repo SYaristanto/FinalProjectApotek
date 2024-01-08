@@ -4,13 +4,14 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<!-- <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"> -->
+							<img width="45" height="45" src="https://img.icons8.com/3d-fluency/94/person-female.png" alt="person-female"/>
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['nama'];?>
+									<span class="user-level"><?php echo $_SESSION['role'];?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -68,11 +69,11 @@
 											<span class="sub-item">Obat Masuk</span>
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="./laporan_stok_obat.php">
 											<span class="sub-item">Laporan</span>
 										</a>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</li>
@@ -89,11 +90,11 @@
 											<span class="sub-item">Penjualan</span>
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="overlay-sidebar.html">
 											<span class="sub-item">Laporan</span>
 										</a>
-									</li>
+									</li> -->
 									<!-- <li>
 										<a href="compact-sidebar.html">
 											<span class="sub-item">Laporan</span>
@@ -120,13 +121,18 @@
 											<span class="sub-item">Supplier</span>
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="">
 											<span class="sub-item">Laporan</span>
 										</a>
-									</li>
+									</li> -->
 								</ul>
 							</div>
+							<!-- <button type="button" href="../../login.php" class="btn btn-primary">Logout</button> -->
+							<li class="mx-4 mt-2">
+          						<a href="../backend/logout.php" class="btn btn-primary btn-block"><span class="btn-label mr-2">
+            					</span>Log Out</a>
+							</li>
 						</li>
 					</ul>
 				</div>
