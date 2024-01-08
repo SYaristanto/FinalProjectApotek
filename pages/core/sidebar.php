@@ -41,7 +41,7 @@
 					<ul class="nav nav-primary">
 						<li class="nav-item">
 							<a href="dashboard.php">
-								<i class="fas fa-home"></i>
+								<i class="fas fa-tachometer-alt"></i>
 								<p>Dashboard</p>
 							</a>
 						</li>
