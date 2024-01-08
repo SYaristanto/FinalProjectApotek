@@ -1,10 +1,3 @@
-<?php
-
-if (isset($_SESSION['role']) && $_SESSION['role'] == 'super_admin') {
-    header('Location:../pages/dashboard_owner.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +5,11 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 'super_admin') {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+  <title>Login - Apotek Arshaka Medika</title>
 
 </head>
 
-<body style="background-image: url('assets/img/'); background-size: cover;">
+<!-- <body style="background-image: url('assets/img/'); background-size: cover;"> -->
 
 <body>
 
@@ -30,7 +23,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 'super_admin') {
 
               <div class="d-flex justify-content-center">
                 <a href="login.php" class="logo d-flex align-items-center w-auto">
-                  <img width="330" height="130" src="./assets/img/Arshaka Medika.png" alt="">
+                  <img width="330" height="130" src="pages/assets/img/Arshaka Medika.png" alt="">
                 </a>
               </div><!-- End Logo -->
 
@@ -69,12 +62,13 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 'super_admin') {
                     <div class="col-12">
                       <!-- <button class="btn btn-primary w-100" type="submit">Login</button> -->
                       <input class="btn btn-primary w-100" type="submit" value="Login" name="login"></input>
+                      <a href="index.php">Homepage</a>
                     </div>
                   </form>
 
                 </div>
               </div>
-
+              
               <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
